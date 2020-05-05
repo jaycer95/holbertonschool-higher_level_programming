@@ -26,6 +26,7 @@ int is_palindrome(listint_t **head)
 		adv = adv->next;
 		i++;
 	}
+	i = 0;
 	for (; i < (len / 2); i++)
 	{
 		if (s[i] != s[len - i - 1])
