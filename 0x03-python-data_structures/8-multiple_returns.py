@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 def multiple_returns(sentence):
-    if sentense is None:
+    if sentense == "":
         tup = (0, None)
         return tup
     else:
