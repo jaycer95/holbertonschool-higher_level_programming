@@ -19,7 +19,7 @@ int is_palindrome(listint_t **head)
 		len++;
 	}
 	adv = *head;
-	s = malloc(sizeof(int) * len);
+	s = malloc(sizeof(int) * len + 1);
 	while (adv)
 	{
 		s[i] = adv->n;
