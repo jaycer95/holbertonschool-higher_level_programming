@@ -1,7 +1,5 @@
 #include "lists.h"
-#include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 /**
  * is_palindrome - checks if a list is palindrome
  * @head: head node
@@ -13,7 +11,7 @@ int is_palindrome(listint_t **head)
 	int len = 0, i = 0;
 	char *s;
 
-	if (!adv || !adv->next)
+	if (!adv)
 		return (1);
 	while (adv)
 	{
