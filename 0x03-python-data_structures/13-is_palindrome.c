@@ -19,7 +19,7 @@ int is_palindrome(listint_t **head)
 		len++;
 	}
 	adv = *head;
-	s = malloc(sizeof(len));
+	s = malloc(sizeof(int) * len);
 	while (adv)
 	{
 		s[i] = adv->n;
@@ -31,8 +31,10 @@ int is_palindrome(listint_t **head)
 	{
 		if (s[i] != s[len - i - 1])
 		{
+			free(s);
 			return (0);
 		}
 	}
+	free(s);
 	return (1);
 }
