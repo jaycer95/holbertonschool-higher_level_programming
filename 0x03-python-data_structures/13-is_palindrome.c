@@ -1,4 +1,4 @@
-#include "lists.h"
+B#include "lists.h"
 #include <stdlib.h>
 /**
  * is_palindrome - checks if a list is palindrome
@@ -20,6 +20,8 @@ int is_palindrome(listint_t **head)
 	}
 	adv = *head;
 	s = malloc(sizeof(int) * len);
+	if (s == NULL)
+		return NULL;
 	while (adv)
 	{
 		s[i] = adv->n;
