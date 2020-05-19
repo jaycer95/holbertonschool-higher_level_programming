@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 """ Creating a Square class """
+
+
 class Square:
     """ Square class """
     def __init__(self, size=0):
@@ -10,10 +12,12 @@ class Square:
             raise ValueError('size must be >= 0')
         else:
             self.__size = size
+
     @property
     def size(self):
         """ get size """
         return self.__size
+
     @size.setter
     def size(self, value):
         """ set the size """
@@ -23,6 +27,7 @@ class Square:
             raise ValueError('size must be >= 0')
         else:
             self.__size = value
+
     def area(self):
         """ Calculates the area"""
         return self.__size ** 2
