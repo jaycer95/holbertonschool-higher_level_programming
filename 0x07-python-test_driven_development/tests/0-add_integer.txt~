@@ -1,0 +1,30 @@
+``add_integer()`` returns the product of its arguments.
+
+Positive integers
+=================
+trying the sum of two integers
+
+	>>> add_integer = __import__('0-add_integer').add_integer
+	>>> add_integer(1, 2)
+	3
+
+Negative integers
+=================
+tryng the sum of one/two negative integers
+
+      >>> add_integer(100, -2)
+      98
+
+One item
+========
+input one item
+
+      >>> add_integer(2)
+      100
+
+No item
+=======
+inout no item
+
+      >>> add_integer()
+      
