@@ -49,7 +49,8 @@
 
 
 >>> list = MyList()
->>> list.append("holberton")
+>>> list.append('holberton')
+>>> list.print_sorted()
 Traceback (most recent call last):
 ...
 TypeError: unorderable types: str() < int()
