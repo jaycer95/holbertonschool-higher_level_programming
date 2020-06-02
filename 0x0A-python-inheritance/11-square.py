@@ -15,6 +15,7 @@ class BaseGeometry:
         if value <= 0:
             raise ValueError("{} must be greater than 0".format(name))
 
+
 class Rectangle(BaseGeometry):
     """ Rectangle class
     inherits from BaseGeometry class """
@@ -30,6 +31,7 @@ class Rectangle(BaseGeometry):
 
     def __str__(self):
         return ("[Rectangle] {}/{}".format(self.__width, self.__height))
+
 
 class Square(Rectangle):
     """ Square class
