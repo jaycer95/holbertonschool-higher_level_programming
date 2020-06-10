@@ -4,6 +4,7 @@
 
 from models.rectangle import Rectangle
 
+
 class Square(Rectangle):
     """ Class Square inherits from Rectangle """
 
@@ -19,4 +20,4 @@ class Square(Rectangle):
         """ str """
 
         return "[{}] ({}) {}/{} - {}".format(type(self).__name__, self.id,
-                                                self.x, self.y, self.size)
+                                             self.x, self.y, self.size)
