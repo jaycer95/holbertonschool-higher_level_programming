@@ -5,6 +5,7 @@
 import json
 import os.path
 
+
 class Base:
     """ manage id attribute in all your future classes
     and to avoid duplicating the same code """
