@@ -2,6 +2,9 @@
 """ This class will be the base of all other classes in this project """
 
 
+import json
+
+
 class Base:
     """ manage id attribute in all your future classes
     and to avoid duplicating the same code """
@@ -20,6 +23,5 @@ class Base:
         """ returns the JSON string representation of list_dictionaries """
 
         if list_dictionaries is None or (len(list_dictionaries) == 0):
-            return "[]"
-        else:
-            return json.dumps(list_dictionaries)
+            list_dictionaries = []
+        return json.dumps(list_dictionaries)
