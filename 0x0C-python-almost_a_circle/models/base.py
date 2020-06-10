@@ -45,3 +45,28 @@ class Base:
         if not json_srting or json_srting == "":
             json_srting = "[]"
         return json.loads(json_srting)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """returns an instance with all attributes already set"""
+
+        if cls.__name__ == 'Rectangle':
+            dummy = cls(7, 14)
+        if cls.__name__ == 'Square':
+            dummy = cls(5)
+        dummy.update(**dictionary)
+        return dummy
+
+    @classmethod
+    def load_from_file(cls):
+        """ returns a list of instances"""
+        filename = str(cls.__name__) + ".json"
+        try:
+            with open(filename, 'r+') as f:
+                text = cls.from_json_string(f.read())
+            lists = []
+            for i in text:
+                lists.append(cls.create(**i))
+            return lists
+        except Exception:
+            return []
