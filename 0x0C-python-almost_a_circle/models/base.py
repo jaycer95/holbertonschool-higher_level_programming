@@ -3,7 +3,7 @@
 
 
 import json
-
+import os.path
 
 class Base:
     """ manage id attribute in all your future classes
@@ -31,7 +31,7 @@ class Base:
         """writes the JSON string representation of list_objs to a file"""
 
         lists = []
-        filename = cls.__name__ + ".json"
+        filename = str(cls.__name__) + ".json"
         if list_objs is not None:
             for i in list_objs:
                 lists.append(cls.to_dictionary(i))
@@ -42,9 +42,9 @@ class Base:
     def from_json_string(json_string):
         """returns the list of the JSON string representation json_string"""
 
-        if not json_srting or json_srting == "":
-            json_srting = "[]"
-        return json.loads(json_srting)
+        if not json_string or json_string == "":
+            return []
+        return json.loads(json_string)
 
     @classmethod
     def create(cls, **dictionary):
@@ -60,13 +60,12 @@ class Base:
     @classmethod
     def load_from_file(cls):
         """ returns a list of instances"""
-        filename = str(cls.__name__) + ".json"
-        try:
-            with open(filename, 'r+') as f:
-                text = cls.from_json_string(f.read())
-            lists = []
-            for i in text:
-                lists.append(cls.create(**i))
+        filename = cls.__name__ + ".json"
+        lists = []
+        if os.path.isfile(filename):
+            with open(filename) as f:
+                for line in f:
+                    text = cls.from_json_string(line)
+                    for i in text:
+                        lists.append(cls.create(**i))
             return lists
-        except Exception:
-            return []
