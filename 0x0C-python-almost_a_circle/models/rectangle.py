@@ -9,6 +9,7 @@ class Rectangle(Base):
     """ Class Rectangle inherits from Base """
 
     def __init__(self, width, height, x=0, y=0, id=None):
+        """ init """
 
         super().__init__(id)
         self.width = width
@@ -18,10 +19,14 @@ class Rectangle(Base):
 
     @property
     def width(self):
+        """width"""
+
         return self.__width
 
     @width.setter
     def width(self, value):
+        """ width conditions """
+
         if type(value) is not int:
             raise TypeError("width must be an integer")
         elif value <= 0:
@@ -31,10 +36,14 @@ class Rectangle(Base):
 
     @property
     def height(self):
+        """ height """
+
         return self.__height
 
     @height.setter
     def height(self, value):
+        """ height conditions """
+
         if type(value) is not int:
             raise TypeError("height must be an integer")
         elif value <= 0:
@@ -44,10 +53,14 @@ class Rectangle(Base):
 
     @property
     def x(self):
+        """ x """
+
         return self.__x
 
     @x.setter
     def x(self, value):
+        """ x conditions """
+
         if type(value) is not int:
             raise TypeError("x must be an integer")
         elif value < 0:
@@ -57,10 +70,14 @@ class Rectangle(Base):
 
     @property
     def y(self):
+        """ y """
+
         return self.__y
 
     @y.setter
     def y(self, value):
+        """ y conditions """
+
         if type(value) is not int:
             raise TypeError("y must be an integer")
         elif value < 0:
@@ -69,9 +86,13 @@ class Rectangle(Base):
             self.__y = value
 
     def area(self):
+        """ area """
+
         return self.__height * self.__width
 
     def display(self):
+        """ display """
+
         for k in range(self.__y):
             print()
         for i in range(self.__height):
@@ -82,11 +103,15 @@ class Rectangle(Base):
             print()
 
     def __str__(self):
+        """ str """
+
         return "[{}] ({}) {}/{} - {}/{}".format(type(self).__name__, self.id,
                                                 self.x, self.y, self.width,
                                                 self.height)
 
     def update(self, *args, **kwargs):
+        """ update """
+
         for i, arg in enumerate(args):
             if i == 0:
                 self.id = arg
