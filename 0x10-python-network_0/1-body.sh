@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 # Send a GET request to the URL, and displays the body of the response
-curl $1
+curl -s $1
 
