@@ -9,5 +9,5 @@ if (isNaN(parseInt(process.argv[2], 10)) === false) {
     line = '';
   }
 } else {
-  console.log('Missing size')
+  console.log('Missing size');
 }
