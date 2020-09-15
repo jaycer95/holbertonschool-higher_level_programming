@@ -5,4 +5,4 @@ if (process.argv[2] !== undefined) {
   }
 } else {
   console.log('Missing number of occurrences');
-}  
+}

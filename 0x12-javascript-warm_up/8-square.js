@@ -2,14 +2,12 @@
 if (process.argv[2] === undefined) {
   console.log('Missing size');
 } else {
-  let k = [];
-  let s = '';
+  let line = '';
   for (let i = 0; i < process.argv[2]; i++) {
     for (let j = 0; j < process.argv[2]; j++) {
-      s += 'X';
+      line += 'X';
     }
-    k[i] = s;
-    s = '';
+    console.log(line);
+    line = '';
   }
-  console.log(k.join('\n'));
 }
