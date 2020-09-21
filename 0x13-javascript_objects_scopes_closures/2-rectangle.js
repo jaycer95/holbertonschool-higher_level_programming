@@ -9,3 +9,4 @@ class  Rectangle {
 		this.object = new Object(); }
 	}
 }
+module.exports = Rectangle;
